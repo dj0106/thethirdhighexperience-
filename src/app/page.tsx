@@ -21,23 +21,80 @@ function Navigation() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600"></div>
-          </div>
+          <img
+            src="/images/logos/meditation.jpeg"
+            alt="Meditation Logo"
+            style={{
+              width: '48px',
+              height: '48px',
+              transform: 'rotate(0deg)',
+              opacity: 1,
+              position: 'absolute',
+              top: '50px',
+              left: '120px',
+              borderWidth: '1px',
+              borderRadius: '100px',
+              borderStyle: 'solid',
+              borderColor: 'rgba(255, 255, 255, 0.3)',
+              objectFit: 'cover'
+            }}
+          />
         </div>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           <a href="#home" className="text-white hover:text-yellow-400 transition-colors">Home</a>
-          <a href="#blogs" className="text-white hover:text-yellow-400 transition-colors">Blogs</a>
+          <a
+            href="#blogs"
+            className="text-white hover:text-yellow-400 transition-colors"
+            style={{
+              width: '58px',
+              height: '24px',
+              transform: 'rotate(0deg)',
+              opacity: 1
+            }}
+          >
+            Blogs
+          </a>
           <a href="#store" className="text-white hover:text-yellow-400 transition-colors">Store</a>
-          <a href="#community" className="text-white hover:text-yellow-400 transition-colors">Community</a>
+          <a
+            href="#community"
+            className="text-white hover:text-yellow-400 transition-colors"
+            style={{
+              width: '121px',
+              height: '24px',
+              transform: 'rotate(0deg)',
+              opacity: 1
+            }}
+          >
+            Community
+          </a>
           <a href="#practices" className="text-white hover:text-yellow-400 transition-colors">Guided Practices</a>
-          <a href="#book" className="text-white hover:text-yellow-400 transition-colors">Book</a>
+          <a
+            href="#book"
+            className="text-white hover:text-yellow-400 transition-colors"
+            style={{
+              width: '53px',
+              height: '24px',
+              transform: 'rotate(0deg)',
+              opacity: 1
+            }}
+          >
+            Book
+          </a>
         </div>
 
         {/* Meditate Button */}
-        <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-6 py-2 rounded-full transition-colors">
+        <button
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium transition-colors"
+          style={{
+            width: '160px',
+            height: '48px',
+            transform: 'rotate(0deg)',
+            opacity: 1,
+            borderRadius: '24px'
+          }}
+        >
           Meditate
         </button>
       </div>
@@ -103,53 +160,239 @@ function CountdownCircle({ value, label, variant = 'default' }: {
 // Hero Section - First Image
 function HeroSection() {
   const [timeLeft, setTimeLeft] = useState({
-    days: 180,
-    hours: 13,
-    minutes: 25
+    days: 0,
+    hours: 0,
+    minutes: 0,
   });
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59 };
-        }
-        return prev;
-      });
-    }, 60000);
+    // MahaShivratri 2026 date: February 17, 2026
+    const targetDate = new Date('2026-02-17T00:00:00').getTime();
 
-    return () => clearInterval(interval);
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0 });
+      }
+    };
+
+    // Update immediately
+    updateCountdown();
+
+    // Update every second
+    const timer = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      {/* Main Title */}
-      <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-white text-center mb-16 tracking-wide">
-        MahaShivratri 2026
-      </h1>
+      {/* Starry background overlay */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Fixed positioned stars */}
+        {[
+          { left: '10%', top: '15%', size: 1 },
+        ].map((star, i) => (
+          <div
+            key={`star-${i}`}
+            className="absolute rounded-full opacity-60"
+            style={{
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              left: star.left,
+              top: star.top,
+              background: 'rgba(16, 33, 43, 1)'
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Countdown Circles */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16">
-        <CountdownCircle value={timeLeft.days.toString()} label="Days" variant="dark" />
-        <CountdownCircle value={timeLeft.hours.toString()} label="Hours" variant="bright" />
-        <CountdownCircle value={timeLeft.minutes.toString()} label="Mins" variant="dark" />
+
+
+      {/* Counter Group */}
+      <div className="relative z-10" style={{
+        position: 'absolute',
+        width: '1060px',
+        height: '492px',
+        left: 'calc(50% - 530px)',
+        top: '207px'
+      }}>
+        {/* MahaShivratri 2026 Title */}
+        <h1 style={{
+          position: 'absolute',
+          width: '584px',
+          height: '92px',
+          left: 'calc(50% - 292px)',
+          top: '0px',
+          fontFamily: 'Bodoni Moda, serif',
+          fontStyle: 'normal',
+          fontWeight: 700,
+          fontSize: '60px',
+          lineHeight: '92px',
+          textAlign: 'center',
+          color: '#FFFFFF'
+        }}>
+          MahaShivratri 2026
+        </h1>
+
+        {/* Ellipse 1 - Right */}
+        <div style={{
+          position: 'absolute',
+          width: '340px',
+          height: '340px',
+          left: 'calc(50% - 170px + 360px)',
+          top: '152px',
+          background: '#FFDC41',
+          opacity: 0.3,
+          borderRadius: '50%'
+        }} />
+
+        {/* Ellipse 2 - Left */}
+        <div style={{
+          position: 'absolute',
+          width: '340px',
+          height: '340px',
+          left: 'calc(50% - 170px - 360px)',
+          top: '152px',
+          background: '#FFDC41',
+          opacity: 0.5,
+          borderRadius: '50%'
+        }} />
+
+        {/* Ellipse 3 - Center */}
+        <div style={{
+          position: 'absolute',
+          width: '340px',
+          height: '340px',
+          left: 'calc(50% - 170px)',
+          top: '152px',
+          background: '#FFDC41',
+          opacity: 0.7,
+          borderRadius: '50%'
+        }} />
+
+        {/* Days - 180 */}
+        <div style={{
+          position: 'absolute',
+          width: '106px',
+          height: '92px',
+          left: 'calc(50% - 53px - 360px)',
+          top: '242px',
+          fontFamily: 'Bodoni Moda, serif',
+          fontStyle: 'normal',
+          fontWeight: 700,
+          fontSize: '60px',
+          lineHeight: '92px',
+          textAlign: 'center',
+          color: '#FFFFFF'
+        }}>
+          {timeLeft.days}
+        </div>
+
+        {/* Hours - 13 */}
+        <div style={{
+          position: 'absolute',
+          width: '64px',
+          height: '92px',
+          left: 'calc(50% - 32px)',
+          top: '242px',
+          fontFamily: 'Bodoni Moda, serif',
+          fontStyle: 'normal',
+          fontWeight: 700,
+          fontSize: '60px',
+          lineHeight: '92px',
+          textAlign: 'center',
+          color: '#FFFFFF'
+        }}>
+          {timeLeft.hours}
+        </div>
+
+        {/* Minutes - 25 */}
+        <div style={{
+          position: 'absolute',
+          width: '69px',
+          height: '92px',
+          left: 'calc(50% - 34.5px + 360.5px)',
+          top: '242px',
+          fontFamily: 'Bodoni Moda, serif',
+          fontStyle: 'normal',
+          fontWeight: 700,
+          fontSize: '60px',
+          lineHeight: '92px',
+          textAlign: 'center',
+          color: '#FFFFFF'
+        }}>
+          {timeLeft.minutes}
+        </div>
+
+        {/* Days Label */}
+        <div style={{
+          position: 'absolute',
+          width: '95px',
+          height: '61px',
+          left: 'calc(50% - 47.5px - 359.5px)',
+          top: '324px',
+          fontFamily: 'Bodoni Moda, serif',
+          fontStyle: 'normal',
+          fontWeight: 700,
+          fontSize: '40px',
+          lineHeight: '61px',
+          textAlign: 'center',
+          color: '#FFFFFF'
+        }}>
+          Days
+        </div>
+
+        {/* Hours Label */}
+        <div style={{
+          position: 'absolute',
+          width: '117px',
+          height: '61px',
+          left: 'calc(50% - 58.5px + 0.5px)',
+          top: '324px',
+          fontFamily: 'Bodoni Moda, serif',
+          fontStyle: 'normal',
+          fontWeight: 700,
+          fontSize: '40px',
+          lineHeight: '61px',
+          textAlign: 'center',
+          color: '#FFFFFF'
+        }}>
+          Hours
+        </div>
+
+        {/* Mins Label */}
+        <div style={{
+          position: 'absolute',
+          width: '91px',
+          height: '61px',
+          left: 'calc(50% - 45.5px + 360.5px)',
+          top: '324px',
+          fontFamily: 'Bodoni Moda, serif',
+          fontStyle: 'normal',
+          fontWeight: 700,
+          fontSize: '40px',
+          lineHeight: '61px',
+          textAlign: 'center',
+          color: '#FFFFFF'
+        }}>
+          Mins
+        </div>
       </div>
 
       {/* Subtitle */}
-      <h2 className="text-2xl md:text-3xl font-light text-white text-center mb-8">
+      <h2 className="text-2xl md:text-3xl font-light text-white text-center mb-8 relative z-10">
         Initiation into Awareness
       </h2>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
     </section>
   );
 }
