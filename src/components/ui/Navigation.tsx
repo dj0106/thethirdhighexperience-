@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useMeditation } from '@/contexts/MeditationContext';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { isMeditating, startMeditation, stopMeditation } = useMeditation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +51,7 @@ export default function Navigation() {
             href="#community"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
-              width: '121px',
+              width: '36px',
               height: '24px',
               transform: 'rotate(0deg)',
               opacity: 1
@@ -62,7 +64,7 @@ export default function Navigation() {
             href="#book"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
-              width: '53px',
+              width: '72px',
               height: '24px',
               transform: 'rotate(0deg)',
               opacity: 1
@@ -73,7 +75,8 @@ export default function Navigation() {
         </div>
 
         {/* Meditate Button */}
-        <button 
+        <button
+          onClick={isMeditating ? stopMeditation : startMeditation}
           className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium transition-colors"
           style={{
             width: '160px',
@@ -83,7 +86,7 @@ export default function Navigation() {
             borderRadius: '24px'
           }}
         >
-          Meditate
+          {isMeditating ? 'Stop' : 'Meditate'}
         </button>
       </div>
     </nav>
