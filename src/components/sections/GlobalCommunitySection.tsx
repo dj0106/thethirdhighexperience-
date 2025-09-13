@@ -11,13 +11,12 @@ export default function GlobalCommunitySection() {
         </p>
 
         <p className="text-black/70 mb-12 leading-relaxed max-w-2xl mx-auto">
-          Join thousands of seekers from around the world in our vibrant Telegram community. 
-          Share experiences, ask questions, and support each other on the path to awakening.
+          This is more than a chat — it’s a circle of seekers, a space to grow, and a reminder that you are never walking alone.
         </p>
 
         {/* Join Community Button */}
         <button className="bg-black hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-full transition-colors text-lg">
-          Join Community
+          Enroll Now
         </button>
       </div>
     </section>

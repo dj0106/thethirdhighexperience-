@@ -1,41 +1,34 @@
 export default function AwakeningTextSection() {
   return (
     <section className="min-h-screen flex flex-col items-center px-6 py-20 relative" style={{ background: 'rgba(16, 33, 43, 1)' }}>
-      {/* Header positioned higher */}
-      <div className="text-center mt-16 mb-8">
-        <h2 className="text-4xl md:text-5xl font-light text-white">
+      {/* Header with exact dimensions */}
+      <div className="text-center mt-16 mb-8 flex justify-center">
+        <h2 className="text-4xl md:text-5xl font-light text-white whitespace-nowrap" style={{
+          width: '500px',
+          height: '49px',
+          transform: 'rotate(0deg)',
+          top: '1918px',
+          left: '530px',
+          opacity: 1
+        }}>
           Awakening in Text
         </h2>
       </div>
 
-      {/* Blue Wings SVG Image */}
-      {/* Blue Wings SVG Logo */}
-      <div className="mb-12 flex justify-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 320"
-          className="w-[400px] h-auto"
-          role="img"
-          aria-labelledby="wingsLogoTitle"
-        >
-          <title id="wingsLogoTitle">Blue Wings Logo</title>
-
-          <g stroke="rgba(0,103,163,1)" fill="none" strokeLinecap="round">
-            {/* Left wing */}
-            <path d="M50 250 Q100 50 200 150 Q250 100 300 180 Q350 120 400 200 Q450 140 500 220" strokeWidth="20" />
-            <path d="M80 270 Q130 80 230 170 Q280 120 330 200 Q380 140 430 220 Q480 160 500 240" strokeWidth="18" />
-            <path d="M110 280 Q160 110 260 190 Q310 140 360 220 Q410 160 460 240 Q490 180 500 250" strokeWidth="16" />
-
-            {/* Right wing (mirrored) */}
-            <path d="M950 250 Q900 50 800 150 Q750 100 700 180 Q650 120 600 200 Q550 140 500 220" strokeWidth="20" />
-            <path d="M920 270 Q870 80 770 170 Q720 120 670 200 Q620 140 570 220 Q520 160 500 240" strokeWidth="18" />
-            <path d="M890 280 Q840 110 740 190 Q690 140 640 220 Q590 160 540 240 Q510 180 500 250" strokeWidth="16" />
-          </g>
-
-          {/* Center base line */}
-          <rect x="200" y="285" width="600" height="12" fill="rgba(0,103,163,1)" />
+      {/* Blue Wings SVG Image - Exact Design */}
+      <div className="mb-12">
+        <svg width="552" height="194" viewBox="0 0 552 194" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 60L52.5 162.5L27.5 86C151.5 90 235.5 138.667 262 162.5C216.4 89.3 68.3333 63.6667 0 60Z" fill="#0067A3"/>
+          <path d="M551.5 60L499 162.5L524 86C400 90 316 138.667 289.5 162.5C335.1 89.3 483.167 63.6667 551.5 60Z" fill="#0067A3"/>
+          <path d="M77 22.5L87.5 63.5C167.5 63.5 243.167 119.167 270.5 146.5C231.3 70.1 125.167 32 77 22.5Z" fill="#0067A3"/>
+          <path d="M474.5 22.5L464 63.5C384 63.5 308.333 119.167 281 146.5C320.2 70.1 426.333 32 474.5 22.5Z" fill="#0067A3"/>
+          <path d="M154 38L148 0C228 36.4 262 96.8333 269 122.5C235.4 71.3 178.333 44.8333 154 38Z" fill="#0067A3"/>
+          <path d="M397.5 38L403.5 0C323.5 36.4 289.5 96.8333 282.5 122.5C316.1 71.3 373.167 44.8333 397.5 38Z" fill="#0067A3"/>
+          <rect x="156" y="182" width="240" height="12" fill="#0067A3"/>
         </svg>
       </div>
+
+
 
 
       {/* Main Content */}

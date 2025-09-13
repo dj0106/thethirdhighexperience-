@@ -2,12 +2,12 @@ export default function FooterSection() {
   return (
     <footer className="py-16 px-6" style={{ background: 'rgba(0, 103, 163, 1)' }}>
       <div className="max-w-4xl mx-auto text-center">
-        {/* Meditation Image */}
-        <div className="flex justify-center mb-12">
+        {/* Meditation Logo */}
+        <div className="flex justify-center mb-8">
           <img
-            src="/images/icons/meditation-circle.png"
-            alt="Meditation"
-            className="w-80 h-80 object-contain"
+            src="/images/logos/meditation.jpeg"
+            alt="Meditation Logo"
+            className="w-12 h-12 rounded-full border border-white/30 object-cover"
           />
         </div>
 

@@ -1,21 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function MeditationSpaceSection() {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Generate random sound wave bars
-  const generateSoundWave = (count: number) => {
-    return Array.from({ length: count }, (_, i) => ({
-      id: i,
-      height: Math.random() * 60 + 20, // Random height between 20-80
-      delay: Math.random() * 2, // Random animation delay
-    }));
-  };
-
-  const leftWave = generateSoundWave(20);
-  const rightWave = generateSoundWave(20);
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 py-20 relative" style={{ background: 'rgba(16, 33, 43, 1)' }}>
@@ -29,26 +19,21 @@ export default function MeditationSpaceSection() {
         </p>
         <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
           Close your eyes, breathe deeply, and let this sound guide you inward.
-          This is not just listening — it's arriving in the present moment.
+          This is not just listening — it&apos;s arriving in the present moment.
         </p>
       </div>
 
       {/* Audio Player with Mandala */}
       <div className="relative flex items-center justify-center my-16">
-        {/* Left Sound Wave */}
-        <div className="flex items-end space-x-1 mr-8">
-          {leftWave.map((bar) => (
-            <div
-              key={`left-${bar.id}`}
-              className={`w-1 bg-green-400/60 rounded-full transition-all duration-300 ${
-                isPlaying ? 'animate-pulse' : ''
-              }`}
-              style={{
-                height: `${bar.height}px`,
-                animationDelay: `${bar.delay}s`,
-              }}
-            />
-          ))}
+        {/* Left Vibration Image */}
+        <div className="relative mr-8" style={{ width: '435px', height: '250px', opacity: 0.2 }}>
+          <Image
+            src="/images/icons/Vibration1.png"
+            alt="Left vibration"
+            fill
+            className="object-contain"
+            priority={false}
+          />
         </div>
 
         {/* Central Mandala with Play Button */}
@@ -83,11 +68,25 @@ export default function MeditationSpaceSection() {
             </svg>
           </div>
 
+          {/* Play button background image */}
+          <div
+            className="absolute"
+            style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 0 }}
+          >
+            <Image
+              src="/images/backgrounds/PlayVibration.png"
+              alt="Play vibration background"
+              width={120}
+              height={120}
+              className="object-contain"
+            />
+          </div>
+
           {/* Play Button */}
           <button
             onClick={() => setIsPlaying(!isPlaying)}
             className="absolute inset-0 flex items-center justify-center w-16 h-16 bg-yellow-400 hover:bg-yellow-500 rounded-full transition-all duration-300 transform hover:scale-110 mx-auto my-auto"
-            style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
+            style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 1 }}
           >
             {isPlaying ? (
               // Pause icon
@@ -102,20 +101,15 @@ export default function MeditationSpaceSection() {
           </button>
         </div>
 
-        {/* Right Sound Wave */}
-        <div className="flex items-end space-x-1 ml-8">
-          {rightWave.map((bar) => (
-            <div
-              key={`right-${bar.id}`}
-              className={`w-1 bg-green-400/60 rounded-full transition-all duration-300 ${
-                isPlaying ? 'animate-pulse' : ''
-              }`}
-              style={{
-                height: `${bar.height}px`,
-                animationDelay: `${bar.delay}s`,
-              }}
-            />
-          ))}
+        {/* Right Vibration Image */}
+        <div className="relative ml-8" style={{ width: '435px', height: '250px', opacity: 0.2 }}>
+          <Image
+            src="/images/icons/Vibration2.png"
+            alt="Right vibration"
+            fill
+            className="object-contain"
+            priority={false}
+          />
         </div>
       </div>
     </section>

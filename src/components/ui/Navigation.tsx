@@ -33,7 +33,18 @@ export default function Navigation() {
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#home" className="text-white hover:text-yellow-400 transition-colors">Home</a>
+          <a
+            href="#home"
+            className="text-white hover:text-yellow-400 transition-colors"
+            style={{
+              width: '60px',
+              height: '24px',
+              transform: 'rotate(0deg)',
+              opacity: 1
+            }}
+          >
+            Home
+          </a>
           <a
             href="#blogs"
             className="text-white hover:text-yellow-400 transition-colors"
@@ -46,12 +57,23 @@ export default function Navigation() {
           >
             Blogs
           </a>
-          <a href="#store" className="text-white hover:text-yellow-400 transition-colors">Store</a>
+          <a
+            href="#store"
+            className="text-white hover:text-yellow-400 transition-colors"
+            style={{
+              width: '55px',
+              height: '24px',
+              transform: 'rotate(0deg)',
+              opacity: 1
+            }}
+          >
+            Store
+          </a>
           <a
             href="#community"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
-              width: '36px',
+              width: '100px',
               height: '24px',
               transform: 'rotate(0deg)',
               opacity: 1
@@ -59,7 +81,18 @@ export default function Navigation() {
           >
             Community
           </a>
-          <a href="#practices" className="text-white hover:text-yellow-400 transition-colors">Guided Practices</a>
+          <a
+            href="#practices"
+            className="text-white hover:text-yellow-400 transition-colors"
+            style={{
+              width: '140px',
+              height: '24px',
+              transform: 'rotate(0deg)',
+              opacity: 1
+            }}
+          >
+            Guided Practices
+          </a>
           <a
             href="#book"
             className="text-white hover:text-yellow-400 transition-colors"

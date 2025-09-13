@@ -12,7 +12,7 @@ export default function HeroSection() {
       <StarsBackground />
 
       {/* Conditional Content - Show either Countdown or Meditation View */}
-      {isMeditating ? <MeditationView /> : <Countdown />}
+      {isMeditating ?  <Countdown /> : <MeditationView />}
 
       {/* Subtitle - Positioned below countdown */}
       <h2 className="text-2xl md:text-3xl font-light text-white text-center relative z-10" style={{
