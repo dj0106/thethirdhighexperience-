@@ -62,3 +62,9 @@ body::before {
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}

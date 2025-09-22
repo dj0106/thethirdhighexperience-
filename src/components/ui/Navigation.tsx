@@ -34,7 +34,7 @@ export default function Navigation() {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           <a
-            href="#home"
+            href="/"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
               width: '60px',
@@ -46,7 +46,7 @@ export default function Navigation() {
             Home
           </a>
           <a
-            href="#blogs"
+            href="/blogs"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
               width: '58px',
@@ -58,7 +58,9 @@ export default function Navigation() {
             Blogs
           </a>
           <a
-            href="#store"
+            href="https://razorpay.com/?utm_source=google&utm_medium=cpc&utm_campaign=RPSME-RPPerf-GSearchBrand-Prospect-Dweb-Core&utm_adgroup=brandsearch_core_exact&utm_content=RPSME-Brand-010223&utm_term=razorpay&utm_gclid=Cj0KCQjwrJTGBhCbARIsANFBfgtRCS_WETcjkLEkn59pRsAr7hlpF3fpKWXwyYJ0oSLOqNXov-LPl-IaAhtfEALw_wcB&utm_campaignID=400139470&utm_adgroupID=27293859910&utm_adID=689518700854&utm_network=g&utm_device=c&utm_matchtype=e&utm_devicemodel=&utm_adposition=&utm_location=9198210&gad_source=1&gad_campaignid=400139470&gbraid=0AAAAADdXWPoIl83ir5mz4lp7Pa52XzT4F&gclid=Cj0KCQjwrJTGBhCbARIsANFBfgtRCS_WETcjkLEkn59pRsAr7hlpF3fpKWXwyYJ0oSLOqNXov-LPl-IaAhtfEALw_wcB"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
               width: '55px',
@@ -70,7 +72,7 @@ export default function Navigation() {
             Store
           </a>
           <a
-            href="#community"
+            href="/#community"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
               width: '100px',
@@ -82,7 +84,7 @@ export default function Navigation() {
             Community
           </a>
           <a
-            href="#practices"
+            href="/guided-practices"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
               width: '140px',
@@ -94,7 +96,7 @@ export default function Navigation() {
             Guided Practices
           </a>
           <a
-            href="#book"
+            href="/book"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
               width: '72px',

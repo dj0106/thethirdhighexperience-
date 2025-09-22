@@ -1,6 +1,6 @@
 export default function GlobalCommunitySection() {
   return (
-    <section className="py-20 px-6" style={{ background: 'rgba(255, 220, 65, 1)' }}>
+    <section id="community" className="py-20 px-6" style={{ background: 'rgba(255, 220, 65, 1)' }}>
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-light text-black mb-6">
           Global Community
