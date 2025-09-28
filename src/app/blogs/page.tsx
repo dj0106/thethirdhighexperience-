@@ -4,7 +4,9 @@ import Navigation from "@/components/ui/Navigation";
 import StarsBackground from "@/components/ui/StarsBackground";
 import FooterSection from "@/components/sections/FooterSection";
 import { MeditationProvider } from "@/contexts/MeditationContext";
- 
+import Link from "next/link";
+import { posts } from "./posts";
+
 export default function BlogsPage() {
   return (
     <MeditationProvider>
@@ -22,15 +24,14 @@ export default function BlogsPage() {
             <p className="text-white/70 text-lg">Guided reflections, timeless wisdom, and living practices to help seekers walk deeper into the path of awakening.</p>
           </header>
 
-          {/* Placeholder articles list */}
+          {/* Articles list */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((id) => (
-              <article key={id} className="bg-slate-800/50 backdrop-blur-sm rounded-lg border border-white/10 hover:border-yellow-400/30 transition p-6">
-                <h2 className="text-2xl text-white mb-2">Sample Post {id}</h2>
-                <p className="text-white/70 mb-4">
-                  Coming soon: writings on Shoonyata Meditation, AUM Chanting, and the Mandukya wisdom in daily life.
-                </p>
-                <button className="text-yellow-400 hover:text-yellow-300">Read more</button>
+            {posts.map((post) => (
+              <article key={post.slug} className="bg-slate-800/50 backdrop-blur-sm rounded-lg border border-white/10 hover:border-yellow-400/30 transition p-6">
+                <h2 className="text-2xl text-white mb-2">{post.title}</h2>
+                <p className="text-white/60 text-sm mb-2">{post.date}</p>
+                <p className="text-white/80 mb-4">{post.excerpt}</p>
+                <Link href={`/blogs/${post.slug}`} className="text-yellow-400 hover:text-yellow-300">Read more</Link>
               </article>
             ))}
           </div>

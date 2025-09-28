@@ -54,7 +54,7 @@ const FIXED_STAR_POSITIONS = [
 
 export default function StarsBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {/* Fixed positioned stars */}
       {FIXED_STAR_POSITIONS.map((star, i) => (
         <div
@@ -65,7 +65,8 @@ export default function StarsBackground() {
             height: `${star.size}px`,
             left: star.left,
             top: star.top,
-            background: 'rgba(16, 33, 43, 1)'
+            background: 'rgba(255, 255, 255, 0.9)',
+            boxShadow: '0 0 6px rgba(255, 255, 255, 0.6)'
           }}
         />
       ))}

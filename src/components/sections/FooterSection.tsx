@@ -5,8 +5,8 @@ export default function FooterSection() {
         {/* Meditation Logo */}
         <div className="flex justify-center mb-8">
           <img
-            src="/images/logos/meditation.jpeg"
-            alt="Meditation Logo"
+            src="/images/logos/Shiva.png"
+            alt="ShivaMed"
             className="w-12 h-12 rounded-full border border-white/30 object-cover"
           />
         </div>
