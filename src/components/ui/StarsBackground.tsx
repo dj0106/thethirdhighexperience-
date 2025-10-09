@@ -56,9 +56,9 @@ export default function StarsBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {/* Fixed positioned stars */}
-      {FIXED_STAR_POSITIONS.map((star, i) => (
+      {FIXED_STAR_POSITIONS.map((star) => (
         <div
-          key={`star-${i}`}
+          key={`star-${star.left}-${star.top}-${star.size}`}
           className="absolute rounded-full opacity-60"
           style={{
             width: `${star.size}px`,

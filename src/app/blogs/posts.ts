@@ -9,40 +9,81 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
-    slug: "shoonyata-meditation",
-    title: "Shoonyata Meditation: Entering the Vast Stillness",
+    slug: "cosmic-consciousness",
+    title: "Cosmic Consciousness: Awakening to Universal Awareness",
     date: "March 1, 2025",
     excerpt:
-      "An introduction to Shoonyata (emptiness) meditation — a gentle descent beyond mind into the luminous stillness within.",
+      "Journey into the vast expanse of cosmic consciousness and discover your connection to the infinite universe.",
+    coverImage: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop&crop=center",
     content: [
-      "Shoonyata is not an absence; it is a fullness beyond concepts. When the mind rests and the senses soften, one recognizes the vast spaciousness that has always been present.",
-      "Begin simply: sit comfortably, relax the breath, and allow attention to widen. Notice the silence between thoughts. Rest there. No force, only presence.",
-      "With practice, the sense of a separate ‘me’ begins to relax. What remains is clarity, ease, and a quiet joy that needs nothing to be complete.",
+      "Cosmic consciousness represents the expansion of awareness beyond the individual self into the recognition of universal oneness.",
+      "Through deep meditation and contemplation, we begin to perceive the interconnected nature of all existence.",
+      "This awakening brings profound peace, compassion, and understanding of our place in the cosmic dance.",
     ],
   },
   {
-    slug: "aum-chanting",
-    title: "AUM Chanting: Harmonizing Body, Breath, and Being",
+    slug: "chakra-meditation",
+    title: "Chakra Meditation: Balancing Your Energy Centers",
     date: "March 5, 2025",
     excerpt:
-      "Explore the primordial sound AUM as a living practice — aligning the breath and nervous system with the rhythm of the cosmos.",
+      "Explore the ancient wisdom of chakra meditation to harmonize your energy centers and awaken inner vitality.",
+    coverImage: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop&crop=center",
     content: [
-      "AUM is not merely a sound; it is a vibration that attunes your system to coherence. Each syllable — A, U, M — massaging different regions of the body and the brain.",
-      "Chant slowly. Let the ‘A’ resonate in the abdomen, the ‘U’ in the chest and throat, and the ‘M’ in the skull — buzzing like a bee. Feel the after-silence as the most potent part.",
-      "A few minutes daily can calm anxiety, deepen focus, and open subtle perception. Consistency matters more than intensity.",
+      "The chakra system provides a map for understanding the subtle energies within our being.",
+      "Each energy center corresponds to different aspects of our physical, emotional, and spiritual well-being.",
+      "Regular chakra meditation helps maintain balance and promotes healing on all levels of existence.",
     ],
   },
   {
-    slug: "mandukya-wisdom",
-    title: "Mandukya Wisdom in Daily Life",
+    slug: "ocean-meditation",
+    title: "Ocean Meditation: Finding Peace in Fluid Awareness",
     date: "March 10, 2025",
     excerpt:
-      "Non‑dual pointers from the Mandukya — how waking, dream, and deep sleep reveal the ever‑present Awareness.",
+      "Dive deep into ocean meditation and discover the tranquil depths of your inner being.",
+    coverImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center",
     content: [
-      "The Mandukya points to Turiya — the fourth — not as a separate state, but as the ever‑present background in which all states appear and dissolve.",
-      "Notice moments between activities, breaths, and thoughts. These gaps are doorways. Abide as the knower of all experiences without getting entangled.",
-      "Living this understanding brings natural compassion, simplicity, and fearlessness — not as an achievement, but as your original nature.",
+      "Like the ocean, consciousness has both surface waves and profound depths of stillness.",
+      "Ocean meditation teaches us to dive beneath the turbulent thoughts into the peaceful depths within.",
+      "In this practice, we learn to be both the wave and the ocean, movement and stillness unified.",
+    ],
+  },
+  {
+    slug: "divine-meditation",
+    title: "Divine Meditation: Connecting with Sacred Presence",
+    date: "March 15, 2025",
+    excerpt:
+      "Experience the transformative power of divine meditation and awaken to the sacred presence within.",
+    coverImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
+    content: [
+      "Divine meditation opens the heart to the sacred presence that permeates all existence.",
+      "Through devotion and surrender, we dissolve the barriers between self and the divine.",
+      "This practice cultivates humility, love, and recognition of the sacred in everyday life.",
+    ],
+  },
+  {
+    slug: "cosmic-eye",
+    title: "The Cosmic Eye: Seeing Beyond the Veil",
+    date: "March 20, 2025",
+    excerpt:
+      "Open your inner eye to perceive the cosmic patterns and hidden dimensions of reality.",
+    coverImage: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=600&fit=crop&crop=center",
+    content: [
+      "The cosmic eye represents the awakened perception that sees beyond ordinary reality.",
+      "Through meditation and inner work, we develop the ability to perceive subtle energies and patterns.",
+      "This expanded vision reveals the interconnected web of existence and our role within it.",
+    ],
+  },
+  {
+    slug: "enlightenment-path",
+    title: "The Path to Enlightenment: A Journey Within",
+    date: "March 25, 2025",
+    excerpt:
+      "Discover the timeless path to enlightenment and awaken to your true nature.",
+    coverImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center&sat=-100&con=20",
+    content: [
+      "Enlightenment is not a destination but a continuous awakening to what we already are.",
+      "The path involves releasing illusions and recognizing the luminous awareness that is our essence.",
+      "Each moment offers an opportunity to awaken more fully to the truth of our being.",
     ],
   },
 ];
-

@@ -8,6 +8,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:github": "NODE_ENV=production next build",
+    "export": "next export",
+    "deploy": "npm run build:github && touch out/.nojekyll",
     "start": "next start",
     "lint": "eslint"
   },

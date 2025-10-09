@@ -4,8 +4,16 @@ import FooterSection from "@/components/sections/FooterSection";
 import { MeditationProvider } from "@/contexts/MeditationContext";
 import { posts, type BlogPost } from "../posts";
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post: BlogPost | undefined = posts.find((p) => p.slug === params.slug);
+// Generate static params for all blog posts
+export async function generateStaticParams() {
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post: BlogPost | undefined = posts.find((p) => p.slug === slug);
 
   return (
     <MeditationProvider>
@@ -36,8 +44,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               ) : null}
 
               <div className="prose prose-invert max-w-none">
-                {post.content.map((para, i) => (
-                  <p key={i} className="text-white/90 leading-relaxed mb-5">{para}</p>
+                {post.content.map((para) => (
+                  <p key={para.slice(0, 24)} className="text-white/90 leading-relaxed mb-5">{para}</p>
                 ))}
               </div>
 
