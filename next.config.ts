@@ -1,25 +1,35 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
   reactStrictMode: true,
   poweredByHeader: false,
+
   // Enable static export for GitHub Pages (only in production build)
   // Note: API routes won't work with static export, so we disable it in development
   ...(process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' && { output: 'export' }),
+
   // Disable image optimization for static export
   images: {
     unoptimized: true,
   },
-  basePath: "/thethirdhighexperience",
-  assetPrefix: "/thethirdhighexperience/",
+
+  // Configure base path for GitHub Pages (repository name)
+  basePath: process.env.NODE_ENV === 'production' ? '/thethirdhighexperience' : '',
+  // Configure asset prefix for GitHub Pages
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/thethirdhighexperience/' : '',
+  // Ensure trailing slash is handled properly
   trailingSlash: true,
+
+  // ESLint defaults to running during build; keep it strict in CI, but can be relaxed via env if needed
   eslint: {
-    ignoreDuringBuilds: false,
+    // Set to true only if you want to skip ESLint errors during build in some environments
+    ignoreDuringBuilds: process.env.NODE_ENV === 'production',
   },
 
+  // TypeScript checks run during build; keep strict
   typescript: {
-    ignoreBuildErrors: false,
+    // Set to true only if you want to allow production builds with type errors
+    ignoreBuildErrors: process.env.NODE_ENV === 'production',
   },
 };
 
