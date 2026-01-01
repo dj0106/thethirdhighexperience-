@@ -95,7 +95,7 @@ export default function GuidedPracticesPage() {
           {/* Get PDF CTA */}
           <div className="relative z-10 mt-8">
             <a
-              href="https://rzp.io/rzp/thethirdbook"
+              href="https://rzp.io/rzp/practices"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-6 py-2 rounded-full shadow-md transition-colors"
@@ -178,7 +178,7 @@ export default function GuidedPracticesPage() {
           {/* Get PDF CTA */}
           <div className="relative z-10 mt-8">
             <a
-              href="https://rzp.io/rzp/thethirdbook"
+              href="https://rzp.io/rzp/practices"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-rose-400 hover:bg-rose-500 text-white font-medium px-6 py-2 rounded-full shadow-md transition-colors"
@@ -261,7 +261,7 @@ export default function GuidedPracticesPage() {
           {/* Get PDF CTA */}
           <div className="relative z-10 mt-8">
             <a
-              href="https://rzp.io/rzp/thethirdbook"
+              href="https://rzp.io/rzp/practices"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-indigo-400 hover:bg-indigo-500 text-white font-medium px-6 py-2 rounded-full shadow-md transition-colors"

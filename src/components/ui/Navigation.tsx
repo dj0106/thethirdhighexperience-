@@ -63,19 +63,19 @@ export default function Navigation() {
             rel="noopener noreferrer"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
-              width: '55px',
-              height: '24px',
+              width: '100px',
+              height: '22px',
               transform: 'rotate(0deg)',
               opacity: 1
             }}
           >
-            Retreat
+            MahaShivratri
           </a>
           <a
             href="/#community"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
-              width: '100px',
+              width: '90px',
               height: '24px',
               transform: 'rotate(0deg)',
               opacity: 1
@@ -87,7 +87,7 @@ export default function Navigation() {
             href="/guided-practices"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
-              width: '140px',
+              width: '130px',
               height: '24px',
               transform: 'rotate(0deg)',
               opacity: 1

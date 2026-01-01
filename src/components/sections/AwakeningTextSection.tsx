@@ -41,14 +41,13 @@ export default function AwakeningTextSection() {
         </p>
       </div>
 
-      {/* CTA Button */}
       <a
-        href="/PDF/Retreat.pdf"
+        href="https://drive.google.com/file/d/18vnQ9vvRJhPwHa2IC9Bv4fdQPNS9IDDV/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-full transition-colors text-lg mb-20"
       >
-        Retreat
+        MAHASHIVRATRI
       </a>
     </section>
   );

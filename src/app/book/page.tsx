@@ -63,7 +63,7 @@ export default function BookPage() {
           {/* CTA */}
           <div className="relative z-10 mt-6">
             <a
-              href="https://amzn.in/d/gvXojEK"
+              href="https://rzp.io/rzp/thethirdbook"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-full shadow-md transition-colors"
