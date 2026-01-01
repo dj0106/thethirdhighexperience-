@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "The Third High - Blog API",
+    "description": "API endpoints for managing blog posts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Blogs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/blogs",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "blogs"]
+        },
+        "description": "Fetch all blog posts (no authentication required)"
+      }
+    },
+    {
+      "name": "Get Single Blog",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/blogs/cosmic-consciousness",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "blogs", "cosmic-consciousness"]
+        },
+        "description": "Fetch a single blog by slug (no authentication required)"
+      }
+    },
+    {
+      "name": "Add New Blog",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"slug\": \"new-meditation-practice\",\n  \"title\": \"New Meditation Practice\",\n  \"date\": \"January 1, 2026\",\n  \"excerpt\": \"Discover a new approach to meditation that transforms your daily practice.\",\n  \"coverImage\": \"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600\",\n  \"content\": [\n    \"This is the first paragraph of the blog post.\",\n    \"This is the second paragraph with more details.\",\n    \"This is the third paragraph concluding the post.\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/blogs",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "blogs"]
+        },
+        "description": "Add a new blog post (requires API key)"
+      }
+    },
+    {
+      "name": "Update Specific Blog",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"slug\": \"cosmic-consciousness\",\n  \"title\": \"Cosmic Consciousness: Updated Title\",\n  \"date\": \"March 1, 2025\",\n  \"excerpt\": \"Updated excerpt for this blog post.\",\n  \"coverImage\": \"https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600\",\n  \"content\": [\n    \"Updated first paragraph.\",\n    \"Updated second paragraph.\",\n    \"Updated third paragraph.\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/blogs/cosmic-consciousness",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "blogs", "cosmic-consciousness"]
+        },
+        "description": "Update a specific blog by slug (requires API key)"
+      }
+    },
+    {
+      "name": "Delete Specific Blog",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/blogs/cosmic-consciousness",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "blogs", "cosmic-consciousness"]
+        },
+        "description": "Delete a specific blog by slug (requires API key)"
+      }
+    },
+    {
+      "name": "Replace All Blogs",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"posts\": [\n    {\n      \"slug\": \"first-blog\",\n      \"title\": \"First Blog\",\n      \"date\": \"January 1, 2026\",\n      \"excerpt\": \"First blog excerpt\",\n      \"coverImage\": \"https://images.unsplash.com/photo-123\",\n      \"content\": [\"Content here\"]\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/blogs",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "blogs"]
+        },
+        "description": "Replace entire blogs.json file (requires API key, use with caution!)"
+      }
+    }
+  ]
+}
+

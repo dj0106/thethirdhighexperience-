@@ -58,7 +58,7 @@ export default function Navigation() {
             Blogs
           </a>
           <a
-            href="https://razorpay.com/?utm_source=google&utm_medium=cpc&utm_campaign=RPSME-RPPerf-GSearchBrand-Prospect-Dweb-Core&utm_adgroup=brandsearch_core_exact&utm_content=RPSME-Brand-010223&utm_term=razorpay&utm_gclid=Cj0KCQjwrJTGBhCbARIsANFBfgtRCS_WETcjkLEkn59pRsAr7hlpF3fpKWXwyYJ0oSLOqNXov-LPl-IaAhtfEALw_wcB&utm_campaignID=400139470&utm_adgroupID=27293859910&utm_adID=689518700854&utm_network=g&utm_device=c&utm_matchtype=e&utm_devicemodel=&utm_adposition=&utm_location=9198210&gad_source=1&gad_campaignid=400139470&gbraid=0AAAAADdXWPoIl83ir5mz4lp7Pa52XzT4F&gclid=Cj0KCQjwrJTGBhCbARIsANFBfgtRCS_WETcjkLEkn59pRsAr7hlpF3fpKWXwyYJ0oSLOqNXov-LPl-IaAhtfEALw_wcB"
+            href="/PDF/Retreat.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-yellow-400 transition-colors"
@@ -69,7 +69,7 @@ export default function Navigation() {
               opacity: 1
             }}
           >
-            Store
+            Retreat
           </a>
           <a
             href="/#community"

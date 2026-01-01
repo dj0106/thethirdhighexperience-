@@ -1,0 +1,20 @@
+{
+  "INSTRUCTIONS": "Copy the blog object below and paste it into public/data/blogs.json",
+  "NOTE": "Make sure to add a comma before this new blog entry if adding to existing blogs",
+  
+  "NEW_BLOG_TEMPLATE": {
+    "slug": "inner-peace-meditation",
+    "title": "Finding Inner Peace Through Meditation",
+    "date": "January 1, 2026",
+    "excerpt": "Discover the transformative practice of meditation and learn how to cultivate lasting inner peace in your daily life.",
+    "coverImage": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop",
+    "content": [
+      "In our fast-paced modern world, finding moments of true peace can seem like an impossible task. Yet, within each of us lies an infinite wellspring of tranquility, waiting to be discovered through the practice of meditation.",
+      "Meditation is not about stopping thoughts or achieving a blank mind. Rather, it is about observing the mind with gentle awareness, allowing thoughts to come and go like clouds passing through the sky.",
+      "Through consistent practice, we begin to recognize that we are not our thoughts, but the awareness that observes them. This realization is the gateway to lasting inner peace.",
+      "Start with just five minutes a day. Find a quiet space, sit comfortably, and simply observe your breath. Notice the natural rhythm of inhalation and exhalation without trying to control it.",
+      "As you continue this practice, you'll discover that peace is not something to be achieved or acquired from outside. It is your natural state, always present beneath the surface turbulence of daily life."
+    ]
+  }
+}
+

@@ -7,7 +7,7 @@ export default function GlobalCommunitySection() {
         </h2>
 
         <p className="text-xl md:text-2xl text-black/80 mb-6 font-light">
-          Awakening together - one community on Telegram.
+          Awakening together - one community on Discord.
         </p>
 
         <p className="text-black/70 mb-12 leading-relaxed max-w-2xl mx-auto">
@@ -15,9 +15,14 @@ export default function GlobalCommunitySection() {
         </p>
 
         {/* Join Community Button */}
-        <button className="bg-black hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-full transition-colors text-lg">
-          Enroll Now
-        </button>
+        <a
+          href="https://discord.gg/yVNe32vM"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-black hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-full transition-colors text-lg"
+        >
+          Join Us
+        </a>
       </div>
     </section>
   );

@@ -1,11 +1,31 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function MeditationSpaceSection() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      const handleEnded = () => setIsPlaying(false);
+      audio.addEventListener('ended', handleEnded);
+      return () => audio.removeEventListener('ended', handleEnded);
+    }
+  }, []);
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 py-20 relative" style={{ background: 'rgba(16, 33, 43, 1)' }}>
@@ -84,7 +104,7 @@ export default function MeditationSpaceSection() {
 
           {/* Play Button */}
           <button
-            onClick={() => setIsPlaying(!isPlaying)}
+            onClick={togglePlay}
             className="absolute inset-0 flex items-center justify-center w-16 h-16 bg-yellow-400 hover:bg-yellow-500 rounded-full transition-all duration-300 transform hover:scale-110 mx-auto my-auto"
             style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 1 }}
           >
@@ -112,6 +132,9 @@ export default function MeditationSpaceSection() {
           />
         </div>
       </div>
+
+      {/* Hidden Audio Element */}
+      <audio ref={audioRef} src="/audio/Binaural432Hz60Mins.mp3" preload="metadata" />
     </section>
   );
 }

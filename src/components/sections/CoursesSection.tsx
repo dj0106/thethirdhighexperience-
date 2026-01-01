@@ -4,24 +4,21 @@ export default function CoursesSection() {
   const courses = [
     {
       id: 1,
-      title: "Course 1",
-      description: "The ancient art of becoming nothing. Experience profound depths of consciousness.",
-      price: "$99",
-      duration: "4 weeks"
+      title: "Podcast",
+      description: "Listen to transformative conversations on consciousness, awakening, and spiritual growth. Deep insights delivered to your ears.",
+      link: "https://www.youtube.com/@THEGreatSpiritualAwakening2027/videos"
     },
     {
       id: 2,
-      title: "Course 2",
-      description: "Connect with the cosmic vibration through traditional AUM chanting practices.",
-      price: "$79",
-      duration: "3 weeks"
+      title: "E-book",
+      description: "A comprehensive digital guide to meditation, mindfulness, and the journey to higher consciousness. Read, reflect, and transform.",
+      link: "https://rzp.io/rzp/thethirdbook"
     },
     {
       id: 3,
-      title: "Course 3",
-      description: "Explore the timeless wisdom of consciousness through ancient texts.",
-      price: "$129",
-      duration: "6 weeks"
+      title: "Amazon Find",
+      description: "Curated spiritual tools, meditation essentials, and consciousness-expanding products. Handpicked treasures for your awakening journey.",
+      link: "https://amzn.in/d/gvXojEK"
     }
   ];
 
@@ -68,20 +65,14 @@ export default function CoursesSection() {
                 {course.description}
               </p>
 
-              {/* Price and Duration */}
-              <div className="flex justify-between items-center mb-4 mt-auto">
-                <span className="text-yellow-400 font-semibold text-lg">
-                  {course.price}
-                </span>
-                <span className="text-white/60 text-sm">
-                  {course.duration}
-                </span>
-              </div>
-
-              {/* Enroll Button */}
-              <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 rounded-lg transition-colors">
-                Enroll Now
-              </button>
+              <a
+                href={course.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 rounded-lg transition-colors text-center block"
+              >
+                Explore Now
+              </a>
             </div>
           </div>
         ))}

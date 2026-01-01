@@ -74,6 +74,16 @@ export default function MeditationView() {
                   justifyContent: 'center',
                   overflow: 'hidden'
                 }}>
+                  <img
+                    src="/images/logos/Shiva.png"
+                    alt="Shiva"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '50%'
+                    }}
+                  />
                 </div>
               </div>
             </div>
