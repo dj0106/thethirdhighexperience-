@@ -43,9 +43,8 @@ export default function MeditationSpaceSection() {
         </p>
       </div>
 
-      {/* Audio Player with Mandala */}
       <div className="relative flex items-center justify-center my-16">
-        {/* Left Vibration Image */}
+
         <div className="relative mr-8" style={{ width: '435px', height: '250px', opacity: 0.2 }}>
           <Image
             src="/images/icons/Vibration1.png"
@@ -56,12 +55,11 @@ export default function MeditationSpaceSection() {
           />
         </div>
 
-        {/* Central Mandala with Play Button */}
         <div className="relative">
-          {/* Mandala SVG */}
+
           <div className="w-32 h-32 text-yellow-400/30 animate-spin-slow">
             <svg viewBox="0 0 200 200" className="w-full h-full">
-              {/* Outer petals */}
+
               {Array.from({ length: 8 }).map((_, i) => (
                 <g key={i} transform={`rotate(${i * 45} 100 100)`}>
                   <path
@@ -72,7 +70,6 @@ export default function MeditationSpaceSection() {
                 </g>
               ))}
 
-              {/* Inner petals */}
               {Array.from({ length: 8 }).map((_, i) => (
                 <g key={i} transform={`rotate(${i * 45 + 22.5} 100 100)`}>
                   <path
