@@ -1,12 +1,15 @@
 import type { NextConfig } from "next";
 
+const isProduction = process.env.NODE_ENV === 'production';
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true';
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
-  // Enable static export for GitHub Pages (only in production build)
-  // Note: API routes won't work with static export, so we disable it in development
-  ...(process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' && { output: 'export' }),
+  // Enable static export for GitHub Pages (only when explicitly set)
+  // Note: API routes won't work with static export
+  ...(isStaticExport && { output: 'export' }),
 
   // Disable image optimization for static export
   images: {
@@ -14,23 +17,27 @@ const nextConfig: NextConfig = {
   },
 
   // Configure base path for GitHub Pages (repository name)
-  basePath: process.env.NODE_ENV === 'production' ? '/thethirdhighexperience' : '',
+  basePath: isProduction ? '/thethirdhighexperience' : '',
   // Configure asset prefix for GitHub Pages
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/thethirdhighexperience/' : '',
+  assetPrefix: isProduction ? '/thethirdhighexperience/' : '',
   // Ensure trailing slash is handled properly
   trailingSlash: true,
 
-  // ESLint defaults to running during build; keep it strict in CI, but can be relaxed via env if needed
+  // Optimize build output
+  compress: true,
+
+  // ESLint configuration
   eslint: {
-    // Set to true only if you want to skip ESLint errors during build in some environments
-    ignoreDuringBuilds: process.env.NODE_ENV === 'production',
+    ignoreDuringBuilds: isProduction,
   },
 
-  // TypeScript checks run during build; keep strict
+  // TypeScript configuration
   typescript: {
-    // Set to true only if you want to allow production builds with type errors
-    ignoreBuildErrors: process.env.NODE_ENV === 'production',
+    ignoreBuildErrors: isProduction,
   },
+
+  // Exclude unnecessary files from build
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 };
 
 export default nextConfig;
