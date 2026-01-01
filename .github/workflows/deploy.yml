@@ -39,14 +39,23 @@ jobs:
         run: npm run build:github
         env:
           NODE_ENV: production
-          
+          NEXT_PUBLIC_STATIC_EXPORT: 'true'
+
       - name: Add .nojekyll file
         run: touch out/.nojekyll
-        
+
+      - name: Check output directory
+        run: |
+          echo "Checking out directory..."
+          ls -lah out/
+          echo "Calculating size..."
+          du -sh out/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+          retention-days: 1
 
   # Deployment job
   deploy:
@@ -55,8 +64,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    timeout-minutes: 10
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 600000
+          error_count: 10
+          reporting_interval: 5000
