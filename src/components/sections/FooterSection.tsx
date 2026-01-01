@@ -17,7 +17,7 @@ export default function FooterSection() {
         <div className="flex justify-center space-x-4 mb-8">
 
           <a
-            href="https://discord.gg/yVNe32"
+            href="https://discord.gg/RtjJasv52T"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 bg-yellow-400 hover:bg-yellow-500 rounded-full flex items-center justify-center transition-colors"

@@ -16,7 +16,7 @@ export default function GlobalCommunitySection() {
 
         {/* Join Community Button */}
         <a
-          href="https://discord.gg/yVNe32vM"
+          href="https://discord.gg/RtjJasv52T"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-black hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-full transition-colors text-lg"
