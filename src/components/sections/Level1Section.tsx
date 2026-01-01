@@ -83,14 +83,6 @@ Refine your inner stability and presence across all states of consciousness.`,
           >
             Next Level
           </button>
-          {level >= 2 && (
-            <button
-              className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400/10 font-medium px-6 py-2 rounded-full transition-colors text-base"
-              aria-label="Level 2"
-            >
-              Level 2
-            </button>
-          )}
         </div>
       </div>
     </section>

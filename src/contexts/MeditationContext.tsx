@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useRef, useEffect } from 'react';
 
 interface MeditationContextType {
   isMeditating: boolean;
@@ -12,9 +12,46 @@ const MeditationContext = createContext<MeditationContextType | undefined>(undef
 
 export function MeditationProvider({ children }: { children: ReactNode }) {
   const [isMeditating, setIsMeditating] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const startMeditation = () => setIsMeditating(true);
-  const stopMeditation = () => setIsMeditating(false);
+  useEffect(() => {
+    // Create audio element on mount
+    audioRef.current = new Audio('/audio/Binaural432Hz60Mins.mp3');
+
+    // Handle audio end
+    const handleEnded = () => {
+      setIsMeditating(false);
+    };
+
+    audioRef.current.addEventListener('ended', handleEnded);
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.removeEventListener('ended', handleEnded);
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  const startMeditation = () => {
+    setIsMeditating(true);
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0; // Reset to beginning
+      audioRef.current.play().catch(error => {
+        console.error('Error playing audio:', error);
+        setIsMeditating(false);
+      });
+    }
+  };
+
+  const stopMeditation = () => {
+    setIsMeditating(false);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0; // Reset to beginning
+    }
+  };
 
   return (
     <MeditationContext.Provider value={{ isMeditating, startMeditation, stopMeditation }}>

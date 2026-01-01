@@ -8,23 +8,20 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 relative" style={{ background: 'rgba(16, 33, 43, 1)' }}>
-      {/* Starry background overlay */}
       <StarsBackground />
 
-      {/* Conditional Content - Show either Countdown or Meditation View */}
       {isMeditating ?  <Countdown /> : <MeditationView />}
 
-      {/* Subtitle - Positioned below countdown */}
-      <h2 className="text-2xl md:text-3xl font-light text-white text-center relative z-10" style={{
+      <h2 className="text-4xl md:text-5xl font-light text-white text-center relative z-10" style={{
         width: '550px',
-        height: '49px',
+        height: '60px',
         transform: 'rotate(0deg)',
         opacity: 1,
         position: 'absolute',
         top: '858px',
         left: '463px'
       }}>
-        Initiation into Awareness
+        Shiva Consiousness
       </h2>
     </section>
   );

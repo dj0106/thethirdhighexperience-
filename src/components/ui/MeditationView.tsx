@@ -7,8 +7,6 @@ export default function MeditationView() {
       left: 'calc(50% - 530px)',
       top: '207px'
     }}>
-
-      {/* Meditation Image with Concentric Circles */}
       <div style={{
         position: 'absolute',
         width: '400px',
@@ -19,7 +17,6 @@ export default function MeditationView() {
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        {/* Outermost Circle */}
         <div style={{
           position: 'absolute',
           width: '400px',
@@ -41,7 +38,6 @@ export default function MeditationView() {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            {/* Third Circle */}
             <div style={{
               position: 'absolute',
               width: '240px',
@@ -52,7 +48,7 @@ export default function MeditationView() {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              {/* Fourth Circle */}
+
               <div style={{
                 position: 'absolute',
                 width: '180px',
@@ -74,6 +70,16 @@ export default function MeditationView() {
                   justifyContent: 'center',
                   overflow: 'hidden'
                 }}>
+                  <img
+                    src="/images/logos/Shiva.png"
+                    alt="Shiva"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '50%'
+                    }}
+                  />
                 </div>
               </div>
             </div>

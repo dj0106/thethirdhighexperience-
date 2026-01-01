@@ -16,12 +16,14 @@ export default function BookPage() {
         <Navigation />
 
         {/* Content */}
-        <main className="relative max-w-4xl mx-auto px-6 pt-32 pb-24 text-center">
+        <main className="relative max-w-4xl mx-auto px-6 pt-32 pb-24 text-center min-h-screen">
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-light text-white mb-4">
             The Third High: Experience Shiva Within
           </h1>
-          <p className="text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
+
+          {/* Paragraph - Positioned in the middle */}
+          <p className="text-white/80 max-w-3xl mx-auto leading-relaxed absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 text-lg z-20">
             Within these pages lies a path of awakening — a synthesis of yogic wisdom and living experience. It leads the seeker from the first spark of awareness to the vast expanse of inner stillness, where the illusion of separation dissolves and the infinite is revealed as one’s true nature.
           </p>
 
@@ -60,9 +62,14 @@ export default function BookPage() {
 
           {/* CTA */}
           <div className="relative z-10 mt-6">
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-full shadow-md transition-colors">
+            <a
+              href="https://amzn.in/d/gvXojEK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-full shadow-md transition-colors"
+            >
               Get eBook
-            </button>
+            </a>
           </div>
         </main>
 

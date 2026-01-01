@@ -70,7 +70,7 @@ export default function GuidedPracticesPage() {
               className="text-white/5 font-[\'Bodoni\',serif]"
               style={{ fontSize: "22vw", letterSpacing: "0.02em", WebkitTextStroke: "1px rgba(255,255,255,0.2)", color: "transparent" }}
             >
-              Level
+              Level 1
             </span>
           </div>
 
@@ -94,13 +94,15 @@ export default function GuidedPracticesPage() {
 
           {/* Get PDF CTA */}
           <div className="relative z-10 mt-8">
-            <button
-              type="button"
+            <a
+              href="https://rzp.io/rzp/thethirdbook"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-6 py-2 rounded-full shadow-md transition-colors"
               aria-label="Get Level 1 PDF"
             >
               Get PDF
-            </button>
+            </a>
           </div>
         </main>
 
@@ -153,7 +155,7 @@ export default function GuidedPracticesPage() {
               className="text-white/5 font-['Bodoni',serif]"
               style={{ fontSize: "22vw", letterSpacing: "0.02em", WebkitTextStroke: "1px rgba(255,255,255,0.2)", color: "transparent" }}
             >
-              Level
+              Level 2
             </span>
           </div>
 
@@ -175,9 +177,15 @@ export default function GuidedPracticesPage() {
 
           {/* Get PDF CTA */}
           <div className="relative z-10 mt-8">
-            <button type="button" className="inline-block bg-rose-400 hover:bg-rose-500 text-white font-medium px-6 py-2 rounded-full shadow-md transition-colors" aria-label="Get Level 2 PDF">
+            <a
+              href="https://rzp.io/rzp/thethirdbook"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-rose-400 hover:bg-rose-500 text-white font-medium px-6 py-2 rounded-full shadow-md transition-colors"
+              aria-label="Get Level 2 PDF"
+            >
               Get PDF
-            </button>
+            </a>
           </div>
         </section>
 
@@ -230,7 +238,7 @@ export default function GuidedPracticesPage() {
               className="text-white/5 font-['Bodoni',serif]"
               style={{ fontSize: "22vw", letterSpacing: "0.02em", WebkitTextStroke: "1px rgba(255,255,255,0.2)", color: "transparent" }}
             >
-              Level
+              Level 3
             </span>
           </div>
 
@@ -252,9 +260,15 @@ export default function GuidedPracticesPage() {
 
           {/* Get PDF CTA */}
           <div className="relative z-10 mt-8">
-            <button type="button" className="inline-block bg-indigo-400 hover:bg-indigo-500 text-white font-medium px-6 py-2 rounded-full shadow-md transition-colors" aria-label="Get Level 3 PDF">
+            <a
+              href="https://rzp.io/rzp/thethirdbook"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-indigo-400 hover:bg-indigo-500 text-white font-medium px-6 py-2 rounded-full shadow-md transition-colors"
+              aria-label="Get Level 3 PDF"
+            >
               Get PDF
-            </button>
+            </a>
           </div>
         </section>
         {/* Footer */}

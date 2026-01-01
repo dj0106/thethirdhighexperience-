@@ -42,9 +42,14 @@ export default function AwakeningTextSection() {
       </div>
 
       {/* CTA Button */}
-      <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-full transition-colors text-lg mb-20">
-        CTA
-      </button>
+      <a
+        href="/PDF/Retreat.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-full transition-colors text-lg mb-20"
+      >
+        Retreat
+      </a>
     </section>
   );
 }
