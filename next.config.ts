@@ -16,18 +16,14 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Configure base path for GitHub Pages (must match repo name exactly)
-  basePath: isProduction ? '/thethirdhighexperience-' : '',
+  // Configure base path for GitHub Pages (must match repo name: thethirdhighexperience)
+  basePath: isProduction ? '/thethirdhighexperience' : '',
   // Configure asset prefix for GitHub Pages
-<<<<<<< HEAD
   assetPrefix: isProduction ? '/thethirdhighexperience/' : '',
   // Expose base path to client for fetch() etc.
   env: {
     NEXT_PUBLIC_BASE_PATH: isProduction ? '/thethirdhighexperience' : '',
   },
-=======
-  assetPrefix: isProduction ? '/thethirdhighexperience-/' : '',
->>>>>>> 441855456a623230d52b7467c469c7ceafb6e2b8
   // Ensure trailing slash is handled properly
   trailingSlash: true,
 
