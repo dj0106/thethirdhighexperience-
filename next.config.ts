@@ -16,10 +16,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Configure base path for GitHub Pages (repository name)
-  basePath: isProduction ? '/thethirdhighexperience' : '',
+  // Configure base path for GitHub Pages (must match repo name exactly)
+  basePath: isProduction ? '/thethirdhighexperience-' : '',
   // Configure asset prefix for GitHub Pages
-  assetPrefix: isProduction ? '/thethirdhighexperience/' : '',
+  assetPrefix: isProduction ? '/thethirdhighexperience-/' : '',
   // Ensure trailing slash is handled properly
   trailingSlash: true,
 
