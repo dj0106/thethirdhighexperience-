@@ -46,7 +46,7 @@ jobs:
         with:
           path: ./out
 
-  # Deployment job
+  # Deployment job (requires: Settings → Pages → Source = "GitHub Actions")
   deploy:
     environment:
       name: github-pages
