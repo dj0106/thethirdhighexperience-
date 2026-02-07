@@ -43,9 +43,15 @@ Once deployed, your site will be available at:
 
 ### Common Issues
 
-1. **404 Error**: Ensure GitHub Pages is enabled and set to GitHub Actions source
-2. **Build Failures**: Check the Actions tab for error logs
-3. **Assets Not Loading**: Verify the `basePath` and `assetPrefix` in `next.config.ts`
+1. **"Creating Pages deployment failed" / HttpError: Not Found (404)**  
+   This means GitHub Pages is not using **GitHub Actions** as the source. Fix it:
+   - Go to **Settings** → **Pages** (left sidebar).
+   - Under **Build and deployment**, set **Source** to **GitHub Actions** (not "Deploy from a branch").
+   - Save and re-run the workflow. The deploy-pages action only works when Source is GitHub Actions.
+
+2. **Build Failures**: Check the Actions tab for error logs.
+
+3. **Assets Not Loading**: Verify the `basePath` and `assetPrefix` in `next.config.ts`.
 
 ### Checking Deployment Status
 

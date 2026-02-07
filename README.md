@@ -8,7 +8,13 @@ This is a [Next.js](https://nextjs.org) project for The Third High Experience, b
 
 ## Getting Started
 
-First, run the development server:
+**1. Install dependencies** (required before first run):
+
+```bash
+npm install
+```
+
+**2. Run the development server:**
 
 ```bash
 npm run dev
@@ -65,6 +71,17 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the site locally.
+
+## Troubleshooting
+
+**Missing dependencies or module not found:** Ensure dependencies are installed and up to date:
+
+```bash
+rm -rf node_modules
+npm install
+```
+
+Use Node.js **18.18.0 or newer** (see `engines` in `package.json`).
 
 ## Deploy on Vercel
 

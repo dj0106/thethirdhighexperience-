@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
   basePath: isProduction ? '/thethirdhighexperience' : '',
   // Configure asset prefix for GitHub Pages
   assetPrefix: isProduction ? '/thethirdhighexperience/' : '',
+  // Expose base path to client for fetch() etc.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProduction ? '/thethirdhighexperience' : '',
+  },
   // Ensure trailing slash is handled properly
   trailingSlash: true,
 

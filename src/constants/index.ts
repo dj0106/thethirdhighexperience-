@@ -3,6 +3,8 @@
  * Centralized constants for The Third High Experience
  */
 
+declare const process: { env: { NODE_ENV?: string; NEXT_PUBLIC_BASE_PATH?: string } };
+
 import { NavigationItem } from '@/types';
 
 // Application Information

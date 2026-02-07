@@ -16,8 +16,9 @@ export async function fetchPosts(): Promise<BlogPost[]> {
   }
 
   try {
-    // Client-side: Use fetch with relative URL
-    const response = await fetch('/data/blogs.json', {
+    // Client-side: Use fetch with basePath for GitHub Pages
+    const base = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BASE_PATH || '' : '';
+    const response = await fetch(`${base}/data/blogs.json`, {
       cache: 'no-store', // Always fetch fresh data
     });
 
