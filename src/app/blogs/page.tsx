@@ -7,6 +7,7 @@ import { MeditationProvider } from "@/contexts/MeditationContext";
 import Link from "next/link";
 import { fetchPosts, type BlogPost } from "./posts";
 import { useEffect, useState } from "react";
+import { assetUrl } from "@/lib/basePath";
 
 export default function BlogsPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -49,7 +50,7 @@ export default function BlogsPage() {
                   <div className="relative h-64 overflow-hidden bg-white/5">
                     {post.coverImage ? (
                       <img
-                        src={post.coverImage}
+                        src={post.coverImage.startsWith('/') ? assetUrl(post.coverImage) : post.coverImage}
                         alt={post.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />

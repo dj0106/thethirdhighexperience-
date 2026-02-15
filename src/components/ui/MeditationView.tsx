@@ -1,3 +1,5 @@
+import { assetUrl } from '@/lib/basePath';
+
 export default function MeditationView() {
   return (
     <div className="relative z-10" style={{
@@ -71,7 +73,7 @@ export default function MeditationView() {
                   overflow: 'hidden'
                 }}>
                   <img
-                    src="/images/logos/Shiva.png"
+                    src={assetUrl('/images/logos/Shiva.png')}
                     alt="Shiva"
                     style={{
                       width: '100%',

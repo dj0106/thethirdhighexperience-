@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useMeditation } from '@/contexts/MeditationContext';
+import { assetUrl } from '@/lib/basePath';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,7 +26,7 @@ export default function Navigation() {
         <div className="flex items-center">
           <div className="w-10 h-10 rounded-full border-2 border-white/30 overflow-hidden">
             <img 
-              src="/images/logos/meditation.jpeg" 
+              src={assetUrl('/images/logos/meditation.jpeg')} 
               alt="Meditation Logo" 
               className="w-full h-full object-cover"
             />
@@ -33,7 +35,7 @@ export default function Navigation() {
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
-          <a
+          <Link
             href="/"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
@@ -44,8 +46,8 @@ export default function Navigation() {
             }}
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/blogs"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
@@ -56,9 +58,9 @@ export default function Navigation() {
             }}
           >
             Blogs
-          </a>
+          </Link>
           <a
-            href="/PDF/Retreat.pdf"
+            href={assetUrl('/PDF/Retreat.pdf')}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-yellow-400 transition-colors"
@@ -71,7 +73,7 @@ export default function Navigation() {
           >
             MahaShivratri
           </a>
-          <a
+          <Link
             href="/#community"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
@@ -82,8 +84,8 @@ export default function Navigation() {
             }}
           >
             Community
-          </a>
-          <a
+          </Link>
+          <Link
             href="/guided-practices"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
@@ -94,8 +96,8 @@ export default function Navigation() {
             }}
           >
             Guided Practices
-          </a>
-          <a
+          </Link>
+          <Link
             href="/book"
             className="text-white hover:text-yellow-400 transition-colors"
             style={{
@@ -106,7 +108,7 @@ export default function Navigation() {
             }}
           >
             Book
-          </a>
+          </Link>
         </div>
 
         {/* Meditate Button */}

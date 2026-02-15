@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, ReactNode, useRef, useEffect } from 'react';
+import { assetUrl } from '@/lib/basePath';
 
 interface MeditationContextType {
   isMeditating: boolean;
@@ -16,7 +17,7 @@ export function MeditationProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Create audio element on mount
-    audioRef.current = new Audio('/audio/Binaural432Hz60Mins.mp3');
+    audioRef.current = new Audio(assetUrl('/audio/Binaural432Hz60Mins.mp3'));
 
     // Handle audio end
     const handleEnded = () => {

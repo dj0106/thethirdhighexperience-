@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
+import { assetUrl } from '@/lib/basePath';
 export default function Level1Section() {
   const [level, setLevel] = useState<number>(1);
   const levelTexts: Record<number, string> = {
@@ -51,7 +52,7 @@ Refine your inner stability and presence across all states of consciousness.`,
         borderColor: 'transparent',
       }}>
         <Image
-          src="/images/backgrounds/Level1.png"
+          src={assetUrl('/images/backgrounds/Level1.png')}
           alt="Level 1 background"
           fill
           className="object-contain"

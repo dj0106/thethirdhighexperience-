@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
+import { assetUrl } from '@/lib/basePath';
 
 export default function MeditationSpaceSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -47,7 +48,7 @@ export default function MeditationSpaceSection() {
 
         <div className="relative mr-8" style={{ width: '435px', height: '250px', opacity: 0.2 }}>
           <Image
-            src="/images/icons/Vibration1.png"
+            src={assetUrl('/images/icons/Vibration1.png')}
             alt="Left vibration"
             fill
             className="object-contain"
@@ -91,7 +92,7 @@ export default function MeditationSpaceSection() {
             style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 0 }}
           >
             <Image
-              src="/images/backgrounds/PlayVibration.png"
+              src={assetUrl('/images/backgrounds/PlayVibration.png')}
               alt="Play vibration background"
               width={120}
               height={120}
@@ -121,7 +122,7 @@ export default function MeditationSpaceSection() {
         {/* Right Vibration Image */}
         <div className="relative ml-8" style={{ width: '435px', height: '250px', opacity: 0.2 }}>
           <Image
-            src="/images/icons/Vibration2.png"
+            src={assetUrl('/images/icons/Vibration2.png')}
             alt="Right vibration"
             fill
             className="object-contain"
@@ -131,7 +132,7 @@ export default function MeditationSpaceSection() {
       </div>
 
       {/* Hidden Audio Element */}
-      <audio ref={audioRef} src="/audio/Binaural432Hz60Mins.mp3" preload="metadata" />
+      <audio ref={audioRef} src={assetUrl('/audio/Binaural432Hz60Mins.mp3')} preload="metadata" />
     </section>
   );
 }

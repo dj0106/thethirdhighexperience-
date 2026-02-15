@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assetUrl } from '@/lib/basePath';
 
 export default function CoursesSection() {
   const courses = [
@@ -23,9 +24,9 @@ export default function CoursesSection() {
   ];
 
   const courseImages: Record<number, string> = {
-    1: "/images/icons/CourseImage1.png",
-    2: "/images/icons/CourseImage2.png",
-    3: "/images/icons/CourseImage3.png",
+    1: assetUrl("/images/icons/CourseImage1.png"),
+    2: assetUrl("/images/icons/CourseImage2.png"),
+    3: assetUrl("/images/icons/CourseImage3.png"),
   };
 
   return (

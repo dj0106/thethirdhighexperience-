@@ -4,6 +4,7 @@ import Navigation from "@/components/ui/Navigation";
 import StarsBackground from "@/components/ui/StarsBackground";
 import FooterSection from "@/components/sections/FooterSection";
 import { MeditationProvider } from "@/contexts/MeditationContext";
+import { assetUrl } from "@/lib/basePath";
 
 export default function BookPage() {
   return (
@@ -47,13 +48,13 @@ export default function BookPage() {
 
             {/* Ornamental mandala image */}
             <div aria-hidden className="absolute -z-0 inset-0 flex items-center justify-center select-none opacity-90">
-              <img src="/images/backgrounds/BookDesign2.png" alt="" className="w-[520px] h-[520px] object-contain" />
+              <img src={assetUrl("/images/backgrounds/BookDesign2.png")} alt="" className="w-[520px] h-[520px] object-contain" />
             </div>
 
             {/* Book cover */}
             <div className="relative z-10">
               <img
-                src="/images/backgrounds/image.png"
+                src={assetUrl("/images/backgrounds/image.png")}
                 alt="The Third High: Experience Shiva Within book cover"
                 className="w-[360px] h-auto rounded-md shadow-2xl"
               />

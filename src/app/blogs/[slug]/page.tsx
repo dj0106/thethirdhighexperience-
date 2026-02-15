@@ -1,9 +1,11 @@
+import Link from "next/link";
 import Navigation from "@/components/ui/Navigation";
 import StarsBackground from "@/components/ui/StarsBackground";
 import FooterSection from "@/components/sections/FooterSection";
 import { MeditationProvider } from "@/contexts/MeditationContext";
 import { fetchPostsServer } from "../posts.server";
 import type { BlogPost } from "../posts";
+import { assetUrl } from "@/lib/basePath";
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -37,7 +39,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </header>
 
               {post.coverImage ? (
-                <img src={post.coverImage} alt="" className="w-full rounded-lg shadow-lg mb-8 object-cover" />
+                <img src={post.coverImage.startsWith('/') ? assetUrl(post.coverImage) : post.coverImage} alt="" className="w-full rounded-lg shadow-lg mb-8 object-cover" />
               ) : null}
 
               <div className="prose prose-invert max-w-none">
@@ -47,14 +49,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
 
               <div className="mt-10 text-center">
-                <a href="/blogs" className="text-yellow-400 hover:text-yellow-300">← Back to all blogs</a>
+                <Link href="/blogs" className="text-yellow-400 hover:text-yellow-300">← Back to all blogs</Link>
               </div>
             </article>
           ) : (
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-semibold text-white mb-4">Post not found</h1>
               <p className="text-white/70 mb-6">The blog you are looking for does not exist.</p>
-              <a href="/blogs" className="text-yellow-400 hover:text-yellow-300">← Back to all blogs</a>
+              <Link href="/blogs" className="text-yellow-400 hover:text-yellow-300">← Back to all blogs</Link>
             </div>
           )}
         </main>

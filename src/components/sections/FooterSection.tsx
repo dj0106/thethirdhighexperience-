@@ -1,10 +1,12 @@
+import { assetUrl } from '@/lib/basePath';
+
 export default function FooterSection() {
   return (
     <footer className="py-16 px-6" style={{ background: 'rgba(0, 103, 163, 1)' }}>
       <div className="max-w-4xl mx-auto text-center">
         <div className="flex justify-center mb-8">
           <img
-            src="/images/logos/Shiva.png"
+            src={assetUrl('/images/logos/Shiva.png')}
             alt="ShivaMed"
             className="w-12 h-12 rounded-full border border-white/30 object-cover"
           />
