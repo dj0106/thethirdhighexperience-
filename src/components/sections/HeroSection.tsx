@@ -19,7 +19,7 @@ export default function HeroSection() {
         opacity: 1,
         position: 'absolute',
         top: '858px',
-        left: '463px'
+        left: '680px'
       }}>
         Shiva Consiousness
       </h2>
