@@ -39,8 +39,12 @@ jobs:
         run: npm run build:github
         env:
           NODE_ENV: production
+          NEXT_PUBLIC_BASE_PATH: /thethirdhighexperience-
           
         
+      - name: Add .nojekyll for GitHub Pages
+        run: touch out/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

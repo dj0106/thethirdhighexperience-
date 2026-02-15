@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "build:github": "NODE_ENV=production next build",
+    "build:github": "NODE_ENV=production NEXT_PUBLIC_BASE_PATH=/thethirdhighexperience- next build",
+    "build:custom-domain": "NODE_ENV=production next build",
     "export": "next export",
     "deploy": "npm run build:github && touch out/.nojekyll",
     "start": "next start",

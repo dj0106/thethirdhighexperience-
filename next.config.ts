@@ -1,13 +1,13 @@
 import type { NextConfig } from "next";
 
-// Custom domain thirdhighexperience.com at root (no base path). Set NEXT_PUBLIC_BASE_PATH only for subpath deploys.
+// GitHub Pages subpath: /thethirdhighexperience- (required for images/links). For custom domain at root use build:custom-domain.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
-  // Static export for GitHub Pages (custom domain: thirdhighexperience.com)
+  // Static export for GitHub Pages
   output: "export" as const,
 
   // Disable image optimization (required for static export)
@@ -15,8 +15,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // basePath only when set (e.g. subpath deploy); empty for custom domain at root.
-  // When empty, asset URLs stay root-relative (/images/..., etc.) so images load correctly.
+  // basePath required for GitHub Pages subpath so images, logos, and routes resolve correctly
   ...(basePath && { basePath, assetPrefix: basePath }),
 
   env: {

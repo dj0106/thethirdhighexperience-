@@ -1,3 +1,5 @@
+import { pathWithBase } from '@/lib/basePath';
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -16,9 +18,7 @@ export async function fetchPosts(): Promise<BlogPost[]> {
   }
 
   try {
-    // Client-side: Use fetch with basePath for GitHub Pages
-    const base = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BASE_PATH || '' : '';
-    const response = await fetch(`${base}/data/blogs.json`, {
+    const response = await fetch(pathWithBase('/data/blogs.json'), {
       cache: 'no-store', // Always fetch fresh data
     });
 
