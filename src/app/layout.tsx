@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { assetUrl } from "@/lib/basePath";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   description: "Explore Shiva Consciousness through Shoonyata Meditation and AUM Chanting in The Third High Experience.",
   metadataBase: new URL("https://www.example.com"),
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: assetUrl("/images/logos/meditation.jpeg") },
 };
 
 export default function RootLayout({

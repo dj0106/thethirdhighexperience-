@@ -17,7 +17,7 @@ export function MeditationProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Create audio element on mount
-    audioRef.current = new Audio(assetUrl('/audio/Binaural432Hz60Mins.mp3'));
+    audioRef.current = new Audio(assetUrl('/Audio/Binaural432Hz60Mins.mp3'));
 
     // Handle audio end
     const handleEnded = () => {

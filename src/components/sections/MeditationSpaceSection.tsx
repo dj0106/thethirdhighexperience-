@@ -9,13 +9,17 @@ export default function MeditationSpaceSection() {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      const p = audioRef.current.play();
+      if (p !== undefined) {
+        p.then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
       } else {
-        audioRef.current.play();
+        setIsPlaying(true);
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -132,7 +136,7 @@ export default function MeditationSpaceSection() {
       </div>
 
       {/* Hidden Audio Element */}
-      <audio ref={audioRef} src={assetUrl('/audio/Binaural432Hz60Mins.mp3')} preload="metadata" />
+      <audio ref={audioRef} src={assetUrl('/Audio/Binaural432Hz60Mins.mp3')} preload="auto" />
     </section>
   );
 }

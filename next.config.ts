@@ -1,24 +1,25 @@
 import type { NextConfig } from "next";
 
+// Only use basePath for GitHub Pages production build; local dev uses root
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
-  // Always enable static export for GitHub Pages (remove conditional)
-  output: 'export',
+  // Static export only when building for GitHub Pages
+  ...(process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' ? { output: 'export' as const } : {}),
 
   // Disable image optimization (required for static export)
   images: {
     unoptimized: true,
   },
 
-  // Fix: Match your EXACT repo name with trailing slash
-  basePath: '/thethirdhighexperience-',
-  assetPrefix: '/thethirdhighexperience-',
-  
-  // Expose base path to client
+  basePath: basePath || undefined,
+  ...(basePath ? { assetPrefix: basePath } : {}),
+
   env: {
-    NEXT_PUBLIC_BASE_PATH: '/thethirdhighexperience-',
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
   
   // Fix client-side routing
