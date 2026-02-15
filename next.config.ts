@@ -1,25 +1,27 @@
 import type { NextConfig } from "next";
 
-// Only use basePath for GitHub Pages production build; local dev uses root
+// For custom domain: always root path (no basePath needed)
+// Set these in .env.local for local dev flexibility
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
-  // Static export only when building for GitHub Pages
-  ...(process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' ? { output: 'export' as const } : {}),
+  // Always static export for GitHub Pages
+  output: 'export' as const,
 
   // Disable image optimization (required for static export)
   images: {
     unoptimized: true,
   },
 
-  basePath: basePath || undefined,
-  ...(basePath ? { assetPrefix: basePath } : {}),
+  // NO basePath for custom domain (runs at thirdhighexperience.com root)
+  basePath: undefined,
+  assetPrefix: undefined,
 
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_BASE_PATH: '', // Empty for root domain
   },
   
   // Fix client-side routing
@@ -28,7 +30,7 @@ const nextConfig: NextConfig = {
   // Optimize build output
   compress: true,
 
-  // Build configs (keep these)
+  // Build configs
   eslint: {
     ignoreDuringBuilds: process.env.NODE_ENV === 'production',
   },
